@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Yingqi's SKO</title>
+    <style>
+        /* Import your custom font */
+        @font-face {
+            font-family: 'FF Telex_PM';
+            src: url('./fonts/FFTelex_PM.woff2') format('woff2'),
+                 url('./fonts/FFTelex_PM.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'FF Telex_PM', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin: 0 auto 30px;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            background: linear-gradient(45deg, #f1f1f1, #e0e0e0);
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            z-index: 10;
+        }
+
+        .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .time-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20%; /* Increased from 20% to 30% */
+            background: rgba(0, 0, 0, 0.4); /* slightly darker for better contrast */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-family: 'FF Telex_PM', sans-serif;
+            z-index: 1;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .info-section {
+            max-width: 800px;
+            margin: 40px auto 20px;
+            padding: 25px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .info-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-content {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .features {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .features li {
+            margin-bottom: 8px;
+        }
+
+        .image-link {
+           text-decoration: none;
+           color: inherit;
+           display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: auto;
+        }
+
+        @media (max-width: 1100px) {
+            .gallery {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 20px;
+            }
+
+            .gallery-container {
+                max-width: 900px;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 15px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .gallery-container {
+                max-width: 600px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .gallery {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+                gap: 20px;
+            }
+
+            h1 {
+                font-size: 1.9rem;
+            }
+
+            .gallery-container {
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SKO | Data – Beyond Numbers</h1>
+        <p class="subtitle">This Studio Knowledge Object (SKO) captures my learning journey in the Common Design Studio: Data – Beyond Numbers. It reflects on how I explored data as more than numbers—through collaboration, material experimentation, and emotional storytelling. From working with cyanotype to coordinating an exhibition, this page documents how the studio challenged and expanded my design perspective.</p>
+    </header>
+
+    <div class="gallery-container">
+        <div class="gallery">
+            <!-- Example blocks with time overlays -->
+            <a href="contextualise.html" class="image-link">
+            <div class="image-container">
+                <img src="./Pictures/4:5 1300.jpg" alt="01">
+                <div class="time-overlay">Contextualise</div>
+            </div>
+            </a>
+
+            <a href="reflect.html" class="image-link">
+            <div class="image-container">
+                <img src="./Pictures/4:5 1330.jpg" alt="02">
+                <div class="time-overlay">Reflect</div>
+            </div>
+            </a>
+
+            <a href="propose.html" class="image-link">
+            <div class="image-container">
+                <img src="./Pictures/4:5 1400.jpg" alt="03">
+                <div class="time-overlay">Propose</div>
+            </div>
+            </a>
+            
+            <a href="reference.html" class="image-link">
+            <div class="image-container">
+                <img src="./Pictures/4:5 1430.jpg" alt="04">
+                <div class="time-overlay">References</div>
+            </div>
+            </a>
+
+            <div class="image-container">
+                <img src="./Pictures/4:5 1500.jpg" alt="05">
+                <div class="time-overlay">15:00pm</div>
+            </div>
+            <div class="image-container">
+                <img src="./Pictures/4:5 1530.jpg" alt="06">
+                <div class="time-overlay">15:30pm</div>
+            </div>
+            <div class="image-container">
+                <img src="./Pictures/5:5 1030.jpg" alt="07">
+                <div class="time-overlay">10:30am</div>
+            </div>
+            <div class="image-container">
+                <img src="./Pictures/5:5 1100.jpg" alt="08">
+                <div class="time-overlay">11:00am</div>
+            </div>
+            <div class="image-container">
+                <img src="./Pictures/5:5 1130.jpg" alt="09">
+                <div class="time-overlay">11:30am</div>
+            </div>
+            <div class="image-container">
+                <img src="./Pictures/5:5 1200.jpg" alt="10">
+                <div class="time-overlay">12:00pm</div>
+            </div>
+            <div class="image-container">
+                <img src="./Pictures/5:5 1230.jpg" alt="11">
+                <div class="time-overlay">12:30pm</div>
+            </div>
+            <div class="image-container">
+                <img src="./Pictures/5:5 1300.jpg" alt="12">
+                <div class="time-overlay">13:00pm</div>
+            </div>
+            <div class="image-container">
+                <img src="./Pictures/4:5 1330.jpg" alt="13">
+                <div class="time-overlay">13:30pm</div>
+            </div>
+            <div class="image-container">
+                <img src="./Pictures/5:5 1400.jpg" alt="14">
+                <div class="time-overlay">14:00pm</div>
+            </div>
+            <div class="image-container">
+                <img src="./Pictures/5:5 1430.jpg" alt="15">
+                <div class="time-overlay">14:30pm</div>
+            </div>
+            <div class="image-container">
+                <img src="./Pictures/5:5 1500.jpg" alt="16">
+                <div class="time-overlay">15:00pm</div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <footer>
+        <p>Yingqi's SKO &copy; 2025 | Final Submission for Data - Beyond Numbers</p>
+    </footer>
+</body>
+</html>
